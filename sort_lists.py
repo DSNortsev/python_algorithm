@@ -7,6 +7,13 @@ def insert_sort(a):
             a[k], a[k-1] = a[k-1], a[k]
             k -= 1
 
+def choice_insert(a):
+    ''' Sort list by using choice insert '''
+    n = len(a)
+    for pos in range(0, n-1):
+        for k in range(pos+1, n):
+            if a[k] < a[pos]:
+                a[k], a[pos] = a[pos], a[k]
 
 def test_sort(sort_algorithm):
     print('Testing: ', sort_algorithm.__doc__)
@@ -31,3 +38,4 @@ def test_sort(sort_algorithm):
 
 if __name__ == '__main__':
     test_sort(insert_sort)
+    test_sort(choice_insert)

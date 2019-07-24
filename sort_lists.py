@@ -15,6 +15,14 @@ def choice_insert(a):
             if a[k] < a[pos]:
                 a[k], a[pos] = a[pos], a[k]
 
+def buble_sort(a):
+    ''' Sort list by using buble sort'''
+    n = len(a)
+    for bypass in range(1, n):
+        for k in range(0, n-bypass):
+            if a[k] > a[k+1]:
+                a[k], a[k+1] = a[k+1], a[k]
+
 def test_sort(sort_algorithm):
     print('Testing: ', sort_algorithm.__doc__)
     print('Testcase #1: ', end='')
@@ -39,3 +47,4 @@ def test_sort(sort_algorithm):
 if __name__ == '__main__':
     test_sort(insert_sort)
     test_sort(choice_insert)
+    test_sort(buble_sort)
